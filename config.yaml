@@ -1,0 +1,31 @@
+data:
+  train_path: data/train.csv
+  val_path: data/val.csv
+  test_path: data/test.csv
+  format: csv  # csv or parquet
+  processed_dir: data/processed
+  window_size: 10
+  window_step: 5
+  normal_label: normal
+model:
+  mode: classifier  # classifier or autoencoder
+  architecture: lstm  # lstm, cnn, transformer
+  input_dim: null  # auto-detected
+  hidden_dim: 128
+  num_layers: 2
+  dropout: 0.3
+  num_heads: 4  # used for transformer
+training:
+  batch_size: 64
+  num_epochs: 50
+  learning_rate: 0.001
+  weight_decay: 1.0e-05
+  patience: 7
+  gradient_clip: 5.0
+  device: cuda
+logging:
+  log_dir: experiments/logs
+  checkpoint_dir: experiments/checkpoints
+inference:
+  top_k: 3
+seed: 42

@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv/
+.env/
+.DS_Store
+experiments/logs/
+experiments/checkpoints/
+data/processed/*.npz
+*.pt
